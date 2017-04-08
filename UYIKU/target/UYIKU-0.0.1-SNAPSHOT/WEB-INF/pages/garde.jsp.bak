@@ -1,0 +1,350 @@
+<%@ page contentType="text/html; charset=utf-8"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>UYK</title>
+
+	<link href="/staticfile/css/bootstrap.min.css" rel="stylesheet">
+   <script src="/staticfile/jquery.min.js"></script>
+   <script src="/staticfile/js/bootstrap.min.js"></script>
+
+<style>
+
+@charset "utf-8";
+
+*{margin:0;padding:0;list-style-type:none;}
+
+a,img{border:0;}
+
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";background:url(/staticfile/images/11.jpg);filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+   -moz-background-size:100% 100%;
+   background-size:100% 100%;}
+
+/*课程介绍 轮播*/
+
+.friend{height:413px;margin:300px auto;overflow:hidden;width:1300px;}
+
+.mr_frbox{height:407px;padding:24px 0px 0px;}
+
+.mr_frBtnL{cursor:pointer;display:inline;float:left;height:46px;margin:160px 10px 0 0;width:28px;}
+
+.mr_frUl{float:left;height:202px;width:1047px;margin-left:10px;}
+
+.mr_frBtnR{float:right;margin-top:160px;cursor:pointer;width:28px;height:46px;}
+
+.mr_frUl ul li{display:inline;float:left;/*height:389px;*/width:300px;overflow:hidden;position:relative;}
+
+.mr_frUl ul li a img{/*display:block;*/width:100%;}
+
+.mr_zhe{width:300px;position:absolute;top:0;background:rgba(78, 164, 181, 0.65) none repeat scroll 0 0 !important;/*实现FF背景透明，文字不透明*/filter:Alpha(opacity=80);background:#4ea4b5;/*实现IE背景透明*//*height:389px;*/left:0;right:0;}
+
+.mr_zhe_i h1{text-align:center;font-size:182px;height:138px;line-height:138px;margin-top:72px;margin-bottom:64px;font-weight:bold;color:#fff;}
+
+.mr_zhe_p{margin-bottom:60px;}
+
+.mr_zhe_p h3{text-align:center;font-size:15px;font-weight:bold;color:#fff;line-height:30px;}
+
+.mr_zhe_p h3 span{display:block;margin:0 auto;width:260px;font-size:18px;border-bottom:1px solid #f4f4f4;}
+
+.mr_zhe_hover{bottom:-596px;height:200px;position:absolute;width:300px;background:rgba(0, 0, 0, 0.5) none repeat scroll 0 0 !important;/*实现FF背景透明，文字不透明*/filter:Alpha(opacity=80);background:#0a0a0a;/*实现IE背景透明*/}
+
+.mr_zhe_hover h1{text-align:center;height:40px;line-height:40px;margin:22px 0;color:#fff;}
+
+
+
+#userImg {
+	width:200px;
+	height:200px;
+	
+}
+
+
+</style>
+
+
+
+<!-- slide -->
+
+<script type="text/javascript" src="/staticfile/js/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript" src="/staticfile/js/jquery.SuperSlide2.js"></script>
+
+
+</head>
+
+<body>
+<div class="div1">
+	<script type="text/javascript">
+		alert("11");
+		alert(${cookie.userUrl.value});
+		alert(${cookie.userId.value});
+		alert(${cookie.userUrl.value});
+		alert("22");
+	</script>
+	<img alt="" src="http://${cookie.userUrl.value}" class="img-circle" id="userImg">
+</div>
+<div class="friend">
+
+    <div class="mr_frbox">
+
+        
+
+        <div class="mr_frUl">
+
+            <ul id="mr_fu">
+
+                <li><a href="toclothList.action">
+
+                    <img src="/staticfile/images/i.jpg" />
+
+                </a>
+
+                    <div class="mr_zhe">
+
+                        <div class="mr_zhe_i">
+
+                            <h1>
+                                </h1>
+
+                            <div class="mr_zhe_p">
+
+                                <h3>
+
+                                    <span>私人衣橱</span>MY WARDROBE</h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mr_zhe_hover">
+
+                            <h1>
+
+                                
+
+                            <div class="mr_zhe_p">
+
+                                <h3>
+
+                                    <span>私人衣橱</span>MY WARDROBE</h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li><a href="">
+
+                    <img src="/staticfile/images/i2.jpg" />
+
+                </a>
+
+                    <div class="mr_zhe">
+
+                        <div class="mr_zhe_i">
+
+                            <h1>
+                                </h1>
+
+                            <div class="mr_zhe_p">
+
+                                <h3>
+
+                                    <span>衣橱统计</span>CLOTHES PRESS</h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mr_zhe_hover">
+
+                            <h1>
+
+                                
+
+                            <div class="mr_zhe_p">
+
+                                <h3>
+
+                                    <span>衣橱统计</span>CLOTHES PRESS</h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li><a href="">
+
+                    <img src="/staticfile/images/i3.jpg" />
+
+                </a>
+
+                    <div class="mr_zhe">
+
+                        <div class="mr_zhe_i">
+
+                            <h1>
+
+                                </h1>
+
+                            <div class="mr_zhe_p">
+
+                                <h3>
+
+                                    <span>搭配套装</span>MY COORDINATES</h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mr_zhe_hover">
+
+                            <h1>
+
+                                
+
+                            <div class="mr_zhe_p">
+
+                                <h3>
+
+                                    <span>搭配套装</span>MY COORDINATES</h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li><a href="">
+
+                    <img src="/staticfile/images/i4.jpg" />
+
+                </a>
+
+                    <div class="mr_zhe">
+
+                        <div class="mr_zhe_i">
+
+                            <h1>
+
+                                </h1>
+
+                            <div class="mr_zhe_p">
+
+                                <h3>
+
+                                    <span>推荐穿搭</span>STAR COORDINATES</h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mr_zhe_hover">
+
+                            <h1>
+
+                                
+
+                            <div class="mr_zhe_p">
+
+                                <h3>
+
+                                    <span>推荐穿搭</span>STAR COORDINATES</h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        
+
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+
+	
+
+	/* 图片滚动效果 */
+
+	$(".mr_frbox").slide({
+
+		titCell: "",
+
+		mainCell: ".mr_frUl ul",
+
+		autoPage: true,
+
+		effect: "leftLoop",
+
+		autoPlay: true,
+
+		vis: 4
+
+	});
+
+	
+
+	/* 鼠标悬停图片效果 */
+
+	$(".mr_zhe_hover").css("top", $('.mr_zhe').eq(0).height());
+
+	$("li").mouseout(function (e) {
+
+		if ((e.pageX < $(this).offset().left || e.pageX > ($(this).offset().left + $(this).width())) || (e.pageY < $(this).offset().top || e.pageY > ($(this).offset().top + $(this).height()))) {
+
+			$(this).find('.mr_zhe_i').show();
+
+			$(this).find('.mr_zhe_hover').hide().stop().animate({ top: '190px' }, { queue: false, duration: 190 });
+
+			return false;
+
+		}
+
+
+
+	});
+
+	$('.mr_zhe').mouseover(function (event) {
+
+		$(this).find('.mr_zhe_i').hide();
+
+		$(this).find('.mr_zhe_hover').show().stop().animate({ top: '190px' }, { queue: false, duration: 190 });
+
+		return false;
+
+	});
+
+	
+
+});
+
+</script>
+
+
+
+
+
+</body>
+</html>

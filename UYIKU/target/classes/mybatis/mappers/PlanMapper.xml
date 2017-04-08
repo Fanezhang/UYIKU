@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.uyiku.mapper.PlanMapper">
+	
+	
+	<!-- 通过传入 风格 季节 查询满足条件的衣服 -->
+	<select id="findAllPlan"  resultType="Plan" >
+		SELECT *	FROM plan		where  userId = #{userId}
+	</select>
+	
+	
+	
+	<!--  通过传入的条件查找 符合条件的 -->
+	<select id="findPlanByTag" resultType="Plan">
+		SELECT id,name,style,season,remark,url
+		,createTime,userId,c_id,c_name,c_category,c_remark,lastUpdateTime as p_lastUpdateTime
+		FROM
+		(SELECT id,name,style,season,remark,url,userId,createTime,lastUpdateTime  FROM plan
+		<where>
+			<!-- -->
+			<if test="style!=null and  style!=''"> style = #{style}</if>
+			<if test="season !=null and  season!='' "> and season = #{season}</if>
+		</where>
+		)p
+		LEFT JOIN
+		(
+		SELECT p_id,c_id,c_name,c_category,c_remark,c_url FROM
+		(SELECT p_id,c_id FROM plan_cloth )pc
+		LEFT JOIN
+		(SELECT id as c_cid,name as c_name,category as c_category,remark as
+		c_remark,url as c_url FROM cloth)c
+		ON pc.c_id =c.c_cid
+		)c
+		ON p.userId=c.p_id
+
+	</select>
+	
+		<select id="findOnePlanById" resultType="Plan">
+		SELECT id,name,style,season,remark,url
+		,createTime,userId,c_id,c_name,c_category,c_remark,lastUpdateTime as p_lastUpdateTime
+		FROM
+		(SELECT id,name,style,season,remark,url,userId,createTime FROM plan
+		<where>
+			<!-- -->
+			<if test="style!=null and  style!=''"> style = #{style}</if>
+			<if test="season !=null and  season!='' "> and season = #{season}</if>
+		</where>
+		)p
+		LEFT JOIN
+		(
+		SELECT p_id,c_id,c_name,c_category,c_remark,c_url FROM
+		(SELECT p_id,c_id FROM plan_cloth )pc
+		LEFT JOIN
+		(SELECT id as c_cid,name as c_name,category as c_category,remark as
+		c_remark,url as c_url FROM cloth)c
+		ON pc.c_id =c.c_cid
+		)c
+		ON p.userId=c.p_id
+		where id=#{id}
+
+	</select>
+	
+		<!-- 保存一个套装 -->
+	<insert id="savePlan">
+		insert into plan values{
+			#{id},
+			#{name},
+			#{style},
+			#{season},
+			#{remark},
+			#{url},
+			#{userId},
+			#{creatTime},
+			#{lastUpdateTime}
+		}
+	</insert>
+	
+		
+	
+	<select id="findLike" resultType="Plan">
+		SELECT  * FROM plan  where name like '%' #{word} '%' AND userId=#{userId}	
+	</select>
+	
+	<!-- 删除套装 -->
+	<delete id="delete">
+		delete from plan where id = #{id}
+		
+	</delete>
+</mapper>

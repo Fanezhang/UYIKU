@@ -1,0 +1,419 @@
+/**common*/
+
+.ribs .fl {
+	float: left;
+}
+
+.ribs .fr {
+	float: right;
+}
+
+.ribs .clearfix {
+	overflow: hidden;
+}
+.text-overflow-fag {
+	display: block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+/**ribs*/
+.ribs {
+	/*margin: auto;*/
+	position: relative;
+	height: 100%;
+	min-width: 750px;
+	min-height: 550px;
+}
+
+.ribs .ribs-wrap {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-size: 13px;
+	font-family: "微软雅黑";
+	color: #333;
+}
+
+
+/**colControlled*/
+
+.ribs .colControlled {
+	width: 23%;
+	height: 100%;
+}
+
+.ribs .colControlled ul,
+.ribs .colUncontrolled ul {}
+
+.ribs .colControlled ul li,
+.ribs .colUncontrolled ul li {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	/*padding: 1% 0 0 0;**/
+}
+
+.ribs .colControlled ul li div {
+	float: right;
+}
+
+.ribs .colControlled ul li span,
+.ribs .colUncontrolled ul li span {}
+
+.ribs .colControlled ul li .icon,
+.ribs .colUncontrolled ul li .icon {
+	display: block;
+	width: 50px;
+	height: 50px;
+	/**text-align: center;
+	line-height: 4em;
+	text-indent: -10000px;
+	隐藏文字*/
+}
+
+.ribs .colControlled ul li .title,
+.ribs .colUncontrolled ul li .title {
+	position:absolute;
+	right:0;
+	display:none;
+	padding: 0 20px;
+	height:50px;
+	font-size: 13px;
+	font-family: "微软雅黑";
+	color: #333;
+}
+
+.ribs .colControlled ul li.active:hover,
+.ribs .colUncontrolled ul li.active:hover{
+	cursor: pointer;
+}
+.ribs .colControlled ul li.active .icon,
+.ribs .colUncontrolled ul li.active .icon {
+	/**background: url(../img/bg_number.png) no-repeat!important;
+	color: white;
+	text-indent: 0!important;
+	**/
+}
+/**财产子项 数量*/
+.ribs .colControlled ul li.active .title{
+	
+}
+.ribs .colUncontrolled ul li.active .title{
+	
+}
+.ribs .colControlled ul li.active .title,
+.ribs .colUncontrolled ul li.active .title {
+	background: url(../img/bg_number.png) no-repeat left 6px;
+	color: white;
+	display: block;
+	right: 35px;
+	z-index:-1;	
+}
+.ribs .colUncontrolled ul li.active .title{
+	position: relative;
+	right:18px;
+	background-position-x:right;
+}
+.ribs .colControlled ul li .title .name,
+.ribs .colUncontrolled ul li .title .name {
+	white-space: nowrap;
+	display:block;
+	margin-top:6px;
+	font-size:12px;
+	font-family: 微软雅黑;
+}
+.ribs .colControlled ul li .title .name{
+	text-align: right;
+}
+.ribs .colControlled ul li .title .num,
+.ribs .colUncontrolled ul li .title .num {
+	white-space: nowrap;
+	font-size: 20px;
+	display:block;
+	line-height:1;
+	font-family: 微软雅黑;
+}
+.ribs .colControlled ul li .title .num{
+	text-align: right;
+}
+.ribs .colControlled ul li.active .title .num,
+.ribs .colUncontrolled ul li.active .title .num {
+	visibility: visible;
+}
+
+
+/**colUncontrolled*/
+
+.ribs .colUncontrolled {
+	width: 25%;
+	height: 100%;
+	position: absolute;
+	left: 75%;
+	top: 0;
+}
+
+.ribs .colUncontrolled ul {}
+
+.ribs .colUncontrolled ul li {}
+
+.ribs .colUncontrolled ul li span {}
+
+.ribs .colUncontrolled ul li .icon {}
+
+.ribs .colUncontrolled ul li .num {}
+
+.ribs .colUncontrolled ul li.all .icon,
+.ribs .colControlled ul li.all .icon {
+	background: url(../img/all.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.cq .icon,
+.ribs .colControlled ul li.cq .icon {
+	background: url(../img/cq.png) no-repeat;
+}
+
+.ribs .colUncontrolled ul li.x1 .icon,
+.ribs .colControlled ul li.x1 .icon {
+	background: url(../img/x1.png) no-repeat;
+}
+
+.ribs .colUncontrolled ul li.d .icon,
+.ribs .colControlled ul li.d .icon {
+	background: url(../img/d.png) no-repeat;
+}
+
+.ribs .colUncontrolled ul li.zs .icon,
+.ribs .colControlled ul li.zs .icon {
+	background: url(../img/zs.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.xx .icon,
+.ribs .colControlled ul li.xx .icon {
+	background: url(../img/xx.png) no-repeat;
+}
+
+.ribs .colUncontrolled ul li.yd .icon,
+.ribs .colControlled ul li.yd .icon {
+	background: url(../img/yd.png) no-repeat;
+}
+
+.ribs .colUncontrolled ul li.sy .icon,
+.ribs .colControlled ul li.sy .icon {
+	background: url(../img/sy.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.xy .icon,
+.ribs .colControlled ul li.xy .icon {
+	background: url(../img/xy.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.x .icon,
+.ribs .colControlled ul li.x .icon {
+	background: url(../img/x.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.b .icon,
+.ribs .colControlled ul li.b .icon {
+	background: url(../img/b.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.ss .icon,
+.ribs .colControlled ul li.ss .icon {
+	background: url(../img/ss.png) no-repeat;
+}
+/**active样式*/
+.ribs .colUncontrolled ul li.active.all .icon,
+.ribs .colControlled ul li.active.all .icon {
+	background: url(../img/all_on.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.active.cq .icon,
+.ribs .colControlled ul li.active.cq .icon {
+	background: url(../img/cq_on.png) no-repeat;
+}
+
+.ribs .colUncontrolled ul li.active.x1 .icon,
+.ribs .colControlled ul li.active.x1 .icon {
+	background: url(../img/x1_on.png) no-repeat;
+}
+
+.ribs .colUncontrolled ul li.active.d .icon,
+.ribs .colControlled ul li.active.d .icon {
+	background: url(../img/d_on.png) no-repeat;
+}
+
+.ribs .colUncontrolled ul li.active.zs .icon,
+.ribs .colControlled ul li.active.zs .icon {
+	background: url(../img/zs_on.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.active.xx .icon,
+.ribs .colControlled ul li.active.xx .icon {
+	background: url(../img/xx_on.png) no-repeat;
+}
+
+.ribs .colUncontrolled ul li.active.yd .icon,
+.ribs .colControlled ul li.active.yd .icon {
+	background: url(../img/yd_on.png) no-repeat;
+}
+
+.ribs .colUncontrolled ul li.active.sy .icon,
+.ribs .colControlled ul li.active.sy .icon {
+	background: url(../img/sy_on.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.active.xy .icon,
+.ribs .colControlled ul li.active.xy .icon {
+	background: url(../img/xy_on.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.active.x .icon,
+.ribs .colControlled ul li.active.x .icon {
+	background: url(../img/x_on.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.active.b .icon,
+.ribs .colControlled ul li.active.b .icon {
+	background: url(../img/b_on.png) no-repeat;
+}
+.ribs .colUncontrolled ul li.active.ss .icon,
+.ribs .colControlled ul li.active.ss .icon {
+	background: url(../img/ss_on.png) no-repeat;
+}
+/**colPerson*/
+
+.ribs .colPerson {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	left: 25%;
+	top: 0;
+}
+
+.ribs .colPerson .hd {
+	text-align: center;
+	height:50px;
+}
+.ribs .colPerson .hd .title {
+	position: relative;
+    bottom: -30px;
+	padding: 0 8%;
+	color:#545454;
+}
+
+.ribs .colPerson .hd .prev,
+.ribs .colPerson .hd .next {
+	  position: relative;
+	  bottom: -25px;
+	  display: inline-block;
+	  width: 30px;
+	  height: 30px;
+	  background: url(../img/icon.png) no-repeat 6px 12px;
+	cursor: pointer;
+}
+.ribs .colPerson .hd .prev:hover,
+.ribs .colPerson .hd .next:hover{
+	background-position-y: -14px;
+}
+.ribs .colPerson .hd .next {
+	top: -14px;
+}
+.ribs .colPerson .hd .next,
+.ribs .colPerson .hd .next:hover{
+	background-position-x: -36px;
+}
+
+/**纵轴、上下箭头*/
+.ribs .colPerson .content .yAxis {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: -1;
+	height: 100%;
+	border-left: 1px solid #959595;
+}
+
+.ribs .colPerson .content {
+	position: relative;
+	padding: 20px;
+}
+
+.ribs .colPerson .content ul {}
+
+.ribs .colPerson .content ul li {
+	position: relative;
+	display: block;
+	text-align: center;
+}
+
+.ribs .colPerson .content ul li * {
+	vertical-align: middle;
+}
+
+.ribs .colPerson .content ul li .count {
+	font-size: 20px;
+	font-weight: normal;
+	color: #50BBFA;
+	width: 70px;
+	display: inline-block;
+	text-align: center;
+}
+
+.ribs .colPerson .content ul li .count.controlled {}
+
+.ribs .colPerson .content ul li .name {
+	width: 45%;
+	display: inline-block;
+	background: url(../img/bg_dot.png) repeat-x 0px 38px;
+}
+
+.ribs .colPerson .content ul li .name .line {
+	display: inline-block;
+	width: 20%;
+	height: 1px;
+	border-top: 1px dashed #CED0CD;
+}
+
+.ribs .colPerson .content ul li .name .line1 {}
+
+.ribs .colPerson .content ul li .name .line2 {}
+
+.ribs .colPerson .content ul li .name .text {
+	display: inline-block;
+	width: 100%;
+	height: 80px;
+	margin: 2% 0;
+	background: url(../img/bg_person.png) no-repeat center 8px ;
+	font-size: 19px;
+	line-height: 3.8em;
+	color: #50BBFA;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+
+.ribs .colPerson .content ul li .count.uncontrolled {}
+
+.ribs .colPerson .content ul li .name .text:hover {
+	color:#FFC633;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.ribs .colPerson .content ul li .count:hover {
+	cursor: pointer;
+	font-weight: bold;
+	color: #FFC633!important;
+}
+
+.ribs .colPerson .content ul li.active {}
+
+.ribs .colPerson .content ul li.active .count.active {
+	color: #3582D4;
+	font-weight: bold;
+}
+
+.ribs .colPerson .content ul li.active .name {}
+
+.ribs .colPerson .content ul li.active .name .line {
+}
+
+.ribs .colPerson .content ul li.active .name .text {
+	color: #3582D4;
+	font-weight: bold;
+}
+/**canvas 线*/
+.ribs canvas {
+	position: absolute;
+	top: 0;
+	z-index: -2;
+}

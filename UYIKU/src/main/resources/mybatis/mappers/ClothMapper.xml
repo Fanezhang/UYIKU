@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.uyiku.mapper.ClothMapper">
+
+<!--这里需要一个创建的方法  -->
+	
+	<!-- 查询所有衣服对象 -->
+	<select id="findAllClothList" resultType="Cloth">
+		SELECT id,name,style,color,season,category,remark,url,lastUpdateTime FROM cloth
+	</select>
+	<!-- 根据四个参数查找符合要求的cloth集合 -->   <!--新增  -->
+	<select id="findClothByTag" resultType="Cloth">
+		SELECT * FROM cloth WHERE userId=#{id}
+		<if test="style!='' and  style!=null">AND style=#{style}</if>
+		<if test="category!='' and  category!=null">AND category=#{category}</if>
+		<if test="season!='' and  season!=null">AND season=#{season}</if>
+	</select>
+
+	<!--根据Id查询单件衣服  -->
+	<select id="findOneClothById" resultType="Cloth">
+		SELECT id,name,style,color,season,category,remark,url,lastUpdateTime FROM cloth WHERE id=#{id}
+	</select>
+	<!-- 提交更新衣物数据 -->
+	<update id="updateCloth">
+		update cloth 
+		<set>
+			name = #{name},
+			style = #{style},
+			color = #{color},
+			season = #{season},
+			category = #{category},
+			remark = #{remark},
+			url = #{url},
+			userId = #{userId},
+			lastUpdateTime = #{lastUpdateTime,jdbcType=DATE}
+		
+		</set>
+		where id = #{id}
+	</update>
+	
+	<!--删除单件衣物  附加删除关联表 -->
+	<delete id="deleteClothById">
+		DELETE FROM cloth WHERE id in (
+		<foreach collection="array"  item="id"  separator="," >
+		#{id}
+		</foreach>
+		)
+		
+	</delete>
+	
+		<!-- 模糊查找衣物 -->
+	
+	<select id="findLike" resultType="cloth">
+		SELECT  * FROM cloth  where name like '%' #{word} '%' AND userId=#{userId}	
+	</select>
+	<!-- 新增衣服对象 -->
+	<insert id="saveCloth"> <!-- 新增  未测试 -->
+		insert into cloth values(
+			#{cloth.id},
+			#{cloth.name},
+			#{cloth.style},
+			"红",
+			#{cloth.season},
+			#{cloth.category},
+			#{cloth.remark},
+			#{cloth.url},
+			#{userId},
+			#{cloth.createTime},
+			#{cloth.lastUpdateTime}
+		)
+		
+	</insert>
+
+</mapper>

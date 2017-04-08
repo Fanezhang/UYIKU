@@ -1,0 +1,103 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>衣服添加</title>
+<link rel="stylesheet" href="/staticfile/css/addclothcss/shouye.css">
+	<script src="/staticfile/js/jquery-3.1.1.js"></script>
+	<script   src="/staticfile/js/planeInfojs/modernizr-custom-v2.7.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+	var $miaobian=$('.Xcontent08>div');
+	var $huantu=$('.Xcontent06>img');
+	var $miaobian1=$('.Xcontent26>div');
+	$miaobian.mousemove(function(){miaobian(this);});
+	$miaobian1.click(function(){miaobian1(this);});
+	function miaobian(thisMb){
+		for(var i=0; i<$miaobian.length; i++){
+			$miaobian[i].style.borderColor = '#dedede';
+		}
+		thisMb.style.borderColor = '#cd2426';
+
+		$huantu[0].src = thisMb.children[0].src;
+	}
+	function miaobian1(thisMb1){
+		for(var i=0; i<$miaobian1.length; i++){
+			$miaobian1[i].style.borderColor = '#dedede';
+		}
+//		thisMb.style.borderColor = '#cd2426';
+		$miaobian.css('border-color','#dedede');
+		thisMb1.style.borderColor = '#cd2426';
+		$huantu[0].src = thisMb1.children[0].src;
+	}
+			$(".Xcontent33").click(function(){
+			var value=parseInt($('.input').val())+1;
+       		$('.input').val(value);
+		})
+
+		$(".Xcontent32").click(function(){	
+			var num = $(".input").val()
+			if(num>0){
+				$(".input").val(num-1);
+			}			
+			
+		})
+
+		})
+	</script>
+	
+
+</head>
+
+<body>
+<div class="Xcontent">
+		<ul class="Xcontent01">
+			
+				<div class="Xcontent06"><img src="static/clothImg/7.jpg"></div>
+				
+				<ol class="Xcontent13">
+					<div class="Xcontent14"><p>衣服查看</p></a></div>
+					<div class="Xcontent15"><img src="http://${cloth.url}"></div>
+					<div class="Xcontent16"><p><br/><br/></p></div>
+					
+					<!-- <div class="Xcontent17"> -->
+						<!-- <p class="Xcontent18">售价</p>
+						<p class="Xcontent19">￥<span>69.00</span></p> -->
+						<div class="Xcontent23">
+							<p class="Xcontent24">名称</p>
+							<p class="Xcontent25"> ${cloth.name}</p>
+						</div>
+						
+						<div class="Xcontent23">
+							<p class="Xcontent24">季节：</p>
+							<p class="Xcontent25">${cloth.season}</p>
+						</div>
+						
+					   <!-- </div> -->
+					   <div class="Xcontent23">
+						    <p class="Xcontent24">风格：</p>
+						    <p class="Xcontent25">${cloth.style}</p>
+					   </div>
+					    
+					    <div class="Xcontent23">
+						<p class="Xcontent24">分类：</p>
+						<p class="Xcontent25">${cloth.category}</p>
+					    </div>
+					    
+					      <div class="Xcontent23">
+						<p class="Xcontent24">说明：</p>
+						<p class="Xcontent25">
+						   <textarea name="remark" style="width:200px;height:80px;" >${cloth.remark}</textarea>
+						</p>
+					    </div>
+					
+					<div class="Xcontent34"><a href="toclothUpList.action?userId=${cookie.userId.value}"><img src="/staticfile/images/back.png"></a></div>
+					
+			</ol>
+		</ul>
+		
+	</div>
+</body>
+</html>

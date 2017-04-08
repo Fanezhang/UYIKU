@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.uyiku.mapper.Plan_ClothMapper">
+
+<!-- 保存一个套装 -->
+	<insert id="save">
+		insert into plan_cloth values{
+			#{planId},
+			#{id}
+		}
+	</insert>
+	
+	<!-- 删除套装 -->
+	<delete id="delete">
+		delete from plan_cloth where p_id = #{id}
+	</delete>
+	
+	
+
+</mapper>
