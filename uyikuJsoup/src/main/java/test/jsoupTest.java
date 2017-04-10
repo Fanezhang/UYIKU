@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -163,5 +164,89 @@ public class jsoupTest {
 			}
 		
 	}
-	
+	//遍历url
+	@Test
+	public void test5() throws IOException, InterruptedException {
+		int pid=0;
+		//写文件
+		File file=new File("D:\\java\\WorkspaceMars\\uyikuSpace\\uyiku\\jsoupTestItem.txt");
+		Writer writer=new FileWriter(file,true);
+		BufferedWriter bw=new BufferedWriter(writer);
+		//设置map进行校验
+		Map<String,String> dataMap=new HashMap<String,String>();
+		for(int i=0;i<10000;i++){
+			String url="https://tmatch.simba.taobao.com/?name=tbuad&o=j&pid="+(pid++)+"&count=12&keyword=&p4p=tbcc_p4p_c2015_8_130027_14918041125041491804116091&catid=1624&se=3aba140c15b8ae4295cea246d7325fda";
+			Connection connect = Jsoup.connect(url);
+			try {
+				Response re = connect.ignoreContentType(true).execute();
+				String body = re.body();
+				//把jsonp格式转为json格式
+				int index = body.indexOf("[");
+				int last = body.lastIndexOf("]");
+				String substring = body.substring(index+1, last);
+				//分割json
+				String[] split = substring.split("},");
+				for (String string : split) {//遍历分割出来的数组
+					string=string+"}";
+					if(string.contains("}}")){//去掉最后一条数据多余的右括号
+						string=string.substring(0,string.length()-1);
+					}
+					//把json转为map
+					ObjectMapper om=new ObjectMapper();
+//					JsonNode r = om.readTree(string);
+//					JsonNode jsonNode = r.get("EURL");
+//					System.out.println(jsonNode.toString());
+					Map<String,String> map=om.readValue(string,Map.class);
+					String itemUrl = map.get("EURL");
+					
+					//第二层 商品详情页
+					Document doc = Jsoup.connect(itemUrl).get();
+					Thread.sleep(2000);
+					//--------淘宝--------
+					Element ele = doc.select("#J_Title h3").first();//标题
+					Element eleXl=doc.select("#J_SellCounter").first();//销量
+					Elements elesSx=doc.select("ul[class=attributes-list] li");//商品属性
+					//--------天猫--------
+					if(ele==null||ele.toString().equals("")){
+						ele=doc.select("div[class=tb-detail-hd] h1").first();//标题
+						eleXl=doc.select("span[class=tm-count]").first();//销量
+//						eles=doc.select("#J_deliveryAdd");todo
+						elesSx=doc.select("#J_AttrUL li");//商品属性
+					}
+						String title = ele.text();
+					if(dataMap.get(title)==null){//去除重复项
+						//详情页链接
+						System.out.println(itemUrl);
+						bw.write(itemUrl+"\r\n");
+						//标题
+						System.out.println("\t"+title);
+						bw.write("\t"+title+"\r\n");
+						//销量
+						String saleNum = eleXl.text();
+						System.out.println("\t销量："+saleNum);
+						bw.write("\t销量："+saleNum+"\r\n");
+						//商品属性
+						System.out.println("\t商品属性:");
+						bw.write("\t商品属性:\r\n");
+						for (Element element : elesSx) {
+							String attr = element.text();
+							System.out.println("\t\t"+attr);
+							bw.write("\t\t"+attr+"\r\n");
+						}
+						dataMap.put(title,itemUrl);//把标题存入map
+						bw.flush();
+					}
+//					System.out.println(string);
+				}
+
+//				System.out.println(substring);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+//			System.out.println("========================================================================================================");
+//			bw.write("=================================================================================================================\r\n");
+		}
+		bw.close();
+	}
 }
