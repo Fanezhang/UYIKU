@@ -176,6 +176,7 @@ public class jsoupTest {
 		Map<String,String> dataMap=new HashMap<String,String>();
 		for(int i=0;i<10000;i++){
 			String url="https://tmatch.simba.taobao.com/?name=tbuad&o=j&pid="+(pid++)+"&count=12&keyword=&p4p=tbcc_p4p_c2015_8_130027_14918041125041491804116091&catid=1624&se=3aba140c15b8ae4295cea246d7325fda";
+			
 			Connection connect = Jsoup.connect(url);
 			try {
 				Response re = connect.ignoreContentType(true).execute();
@@ -198,7 +199,6 @@ public class jsoupTest {
 //					System.out.println(jsonNode.toString());
 					Map<String,String> map=om.readValue(string,Map.class);
 					String itemUrl = map.get("EURL");
-					
 					//第二层 商品详情页
 					Document doc = Jsoup.connect(itemUrl).get();
 					Thread.sleep(2000);
@@ -213,6 +213,7 @@ public class jsoupTest {
 //						eles=doc.select("#J_deliveryAdd");todo
 						elesSx=doc.select("#J_AttrUL li");//商品属性
 					}
+					Element eleImg = doc.select("#J_ImgBooth").first();//图片地址，淘宝天猫相同
 						String title = ele.text();
 					if(dataMap.get(title)==null){//去除重复项
 						//详情页链接
@@ -233,6 +234,11 @@ public class jsoupTest {
 							System.out.println("\t\t"+attr);
 							bw.write("\t\t"+attr+"\r\n");
 						}
+						//图片url
+						String imgUrl = "http:"+eleImg.attr("src");
+						System.out.println("\t图片地址："+imgUrl);
+						bw.write("\t图片地址："+imgUrl+"\r\n");
+						
 						dataMap.put(title,itemUrl);//把标题存入map
 						bw.flush();
 					}
