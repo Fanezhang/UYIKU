@@ -74,7 +74,7 @@
 		<ul class="Xcontent01">
 			
 				<div class="Xcontent06">
-					<img style="margin-top:100px;margin-left:150px;width:300px;height:300px;" src="http://${cloth.url }" />
+					<img style="margin-top:100px;margin-left:150px;width:300px;height:300px;" src="http://image.uyiku.com/${cloth.id }.jpg" />
 				</div>
 				
 				<ol class="Xcontent13">

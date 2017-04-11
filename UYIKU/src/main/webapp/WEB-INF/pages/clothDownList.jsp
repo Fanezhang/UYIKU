@@ -174,7 +174,7 @@ background-color: rgb(242,224,210);
     <div id="starsIF" class="imageflow"> 
     	<!-- 下衣遍历展示 -->
 	    <c:forEach items="${clothList}" var="cloth">
-			<img src="http://${cloth.url}" longdesc="clothInfo.action?clothId=${cloth.id}" width="550" height="500" alt="Picture" />
+			<img src="http://image.uyiku.com/${cloth.id}.jpg" longdesc="clothInfo.action?clothId=${cloth.id}" width="550" height="500" alt="Picture" />
 	    </c:forEach>
     </div>
   </div>

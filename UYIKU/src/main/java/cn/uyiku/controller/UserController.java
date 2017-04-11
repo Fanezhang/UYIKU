@@ -24,14 +24,8 @@ public class UserController {
 	
 	@Resource
 	private UserService userService;
-	@RequestMapping("/tostar.action")
-	public String toStar(){
-		return "star1";
-	}
-	@RequestMapping("/tostar2.action")
-	public String toStar2(){
-		return "star";
-	}
+
+	
 	@RequestMapping("tosuitList.action")
 	public String suits(){
 		return "planelist";

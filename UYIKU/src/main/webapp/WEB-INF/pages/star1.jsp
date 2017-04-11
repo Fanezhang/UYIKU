@@ -1,55 +1,199 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!--<html>
 <head>
-<<meta charset="UTF-8">
-
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta http-equiv="Pragma" contect="no-cache">
-	<title>UYK</title>
-	<style type="text/css">
-		body{
-			background: url("/staticfile/images/star1.jpg") no-repeat;
-			background-size: 100% 100%;
-		}
-		#ha{
-			width:100%;
-			height:900px;
-			
-		
-		}
-		#hah{
-			position: absolute;
-			top: 140px;
-			left:300px;
-			width:300px;
-			height:500px;
-		}
-		#hahh{
-			position: absolute;
-			top: 25px;
-			right:35px;
-			width:100px;
-			height:100px;
-		}
-	</style>
-
-
+<script type="text/javascript">
+	top.location.href = "tolight.action";
+	//top.location.href = "toclothList.action";
+</script>
 </head>
-
 <body>
-	<div id="ha">
-		<a href="tostar2.action">
-			<div id="hah" >
-			</div>
-		</a>
-		<a href="togarde.action">
-			<div id="hahh" >
-			</div>
-		</a>
-	</div>
-	
 
 </body>
 
+</html>-->
+<%@ page language="java" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商品添加到收藏夹</title>
+<link rel="stylesheet" type="text/css" href="/staticfile/css/starcss/reset.css">
+<link rel="stylesheet" type="text/css" href="/staticfile/css/starcss/default.css">
+
+<!--主要样式-->
+<link rel="stylesheet" type="text/css" href="/staticfile/css/starcss/styles.css">
+
+<!--[if IE]>
+	<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+<style type="text/css">
+  body{
+			background: url("/staticfile/images/countBackground.jpg") no-repeat;
+			background-size: 100% 100%;
+		}
+
+</style>
+
+</head>
+<body>
+
+<div class="wrapper">
+	<h1 class="title">潮品推送</h1>
+	<span class="car"><i class="shopping-cart"></i></span>
+
+	<div class="clear"></div>
+	<!-- items -->
+	<div class="items">
+		<!-- single item -->
+		<div class="item">
+			<img src="img/droid-x.jpg" alt="item" />
+			 <h2>droid-x</h2>
+
+			<p>价格: <em>$255</em>
+			</p>
+			<button class="go-to-cart" type="button" onclick="window.open('http://taobao.com')">去店铺购买</button>
+			<button class="add-to-cart" type="button">添加收藏夹</button>
+		</div>
+		<!--/ single item -->
+		<!-- single item -->
+		<div class="item">
+			<img src="img/htc-ozone.jpg" alt="item" />
+			 <h2>htc-ozone</h2>
+
+			<p>价格: <em>$368</em>
+			</p>
+			<button class="go-to-cart" type="button" onclick="window.open('http://taobao.com')">去店铺购买</button>
+			<button class="add-to-cart" type="button">添加收藏夹</button>
+		</div>
+		<!--/ single item -->
+		<!-- single item -->
+		<div class="item">
+			<img src="img/motorola-backflip.jpg" alt="item" />
+			 <h2>motorola-backflip</h2>
+
+			<p>价格: <em>$226</em>
+			</p>
+			<button class="go-to-cart" type="button" onclick="window.open('http://taobao.com')">去店铺购买</button>
+			<button class="add-to-cart" type="button">添加收藏夹</button>
+		</div>
+		<!--/ single item -->
+		<!-- single item -->
+		<div class="item">
+			<img src="img/motorola-backflip.jpg" alt="item" />
+			 <h2>motorola-backflip</h2>
+
+			<p>价格: <em>$226</em>
+			</p>
+			<button class="go-to-cart" type="button" onclick="window.open('http://taobao.com')">去店铺购买</button>
+			<button class="add-to-cart" type="button">添加收藏夹</button>
+		</div>
+		<!--/ single item -->
+		<!-- single item -->
+		<div class="item">
+			<img src="img/motorola-backflip.jpg" alt="item" />
+			 <h2>motorola-backflip</h2>
+
+			<p>价格: <em>$226</em>
+			</p>
+			<button class="go-to-cart" type="button" onclick="window.open('http://taobao.com')">去店铺购买</button>
+			<button class="add-to-cart" type="button">添加收藏夹</button>
+		</div>
+		<!--/ single item -->
+		<!-- single item -->
+		<div class="item">
+			<img src="img/motorola-backflip.jpg" alt="item" />
+			 <h2>motorola-backflip</h2>
+
+			<p>价格: <em>$226</em>
+			</p>
+			<button class="go-to-cart" type="button" onclick="window.open('http://taobao.com')">去店铺购买</button>
+			<button class="add-to-cart" type="button">添加收藏夹</button>
+		</div>
+		<!--/ single item -->
+		<!-- single item -->
+		<div class="item">
+			<img src="img/motorola-backflip.jpg" alt="item" />
+			 <h2>motorola-backflip</h2>
+
+			<p>价格: <em>$226</em>
+			</p>
+			<button class="go-to-cart" type="button" onclick="window.open('http://taobao.com')">去店铺购买</button>
+			<button class="add-to-cart" type="button">添加收藏夹</button>
+		</div>
+		<!--/ single item -->
+		<!-- single item -->
+		<div class="item">
+			<img src="img/motorola-backflip.jpg" alt="item" />
+			 <h2>motorola-backflip</h2>
+
+			<p>价格: <em>$226</em>
+			</p>
+			<button class="go-to-cart" type="button" onclick="window.open('http://taobao.com')">去店铺购买</button>
+			<button class="add-to-cart" type="button">添加收藏夹</button>
+		</div>
+		<!--/ single item -->
+		<!-- single item -->
+		<div class="item">
+			<img src="img/motorola-backflip.jpg" alt="item" />
+			 <h2>motorola-backflip</h2>
+
+			<p>价格: <em>$226</em>
+			</p>
+			<button class="go-to-cart" type="button" onclick="window.open('http://taobao.com')">去店铺购买</button>
+			<button class="add-to-cart" type="button">添加收藏夹</button>
+		</div>
+		<!--/ single item -->
+		<!-- single item -->
+		<div class="item">
+			<img src="img/motorola-backflip.jpg" alt="item" />
+			 <h2>motorola-backflip</h2>
+
+			<p>价格: <em>$226</em>
+			</p>
+			<button class="go-to-cart" type="button" onclick="window.open('http://taobao.com')">去店铺购买</button>
+			<button class="add-to-cart" type="button">添加收藏夹</button>
+		</div>
+		<!--/ single item -->
+	</div>
+	<!--/ items -->
+</div>
+	
+<script src="http://www.jq22.com/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src='/staticfile/js/starjs/jquery-ui.min.js'></script>
+<script type="text/javascript">
+$('.add-to-cart').on('click', function () {
+	var cart = $('.shopping-cart');
+	var imgtodrag = $(this).parent('.item').find('img').eq(0);
+	if (imgtodrag) {
+		var imgclone = imgtodrag.clone().offset({
+			top: imgtodrag.offset().top,
+			left: imgtodrag.offset().left
+		}).css({
+			'opacity': '0.5',
+			'position': 'absolute',
+			'height': '150px',
+			'width': '150px',
+			'z-index': '100'
+		}).appendTo($('body')).animate({
+			'top': cart.offset().top + 10,
+			'left': cart.offset().left + 10,
+			'width': 75,
+			'height': 75
+		}, 1000, 'easeInOutExpo');
+		setTimeout(function () {
+			cart.effect('shake', { times: 2 }, 200);
+		}, 1500);
+		imgclone.animate({
+			'width': 0,
+			'height': 0
+		}, function () {
+			$(this).detach();
+		});
+	}
+});
+</script>
+
+
+</body>
 </html>

@@ -1,5 +1,6 @@
 package cn.uyiku.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import cn.uyiku.pojo.User;

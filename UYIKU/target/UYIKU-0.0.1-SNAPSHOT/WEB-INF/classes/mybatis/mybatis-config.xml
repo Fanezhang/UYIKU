@@ -28,7 +28,5 @@
 			通用Mapper接口，多个通用接口用逗号隔开
 			<property name="mappers" value="cn.tarena.ht.mapper.base.SysMapper" />
 		</plugin> -->
-		
-		
 	</plugins>
 </configuration>

@@ -171,7 +171,7 @@ background-color: rgb(242,224,210);
 		<div id="diapoContainer">
 		<c:forEach items="${clothList}" var="cloth">
 			<a href="clothInfo.action?clothId=${cloth.id}">
-				<img class="imgsrc" alt="" src="http://${cloth.url}" />
+				<img class="imgsrc" alt="" src="http://image.uyiku.com/${cloth.id}.jpg" />
 			</a>
 		</c:forEach>
 		

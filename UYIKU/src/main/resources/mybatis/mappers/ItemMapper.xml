@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.uyiku.mapper.ItemMapper">
+	
+	<select id="selectItems" resultMap="ItemRm">
+		select * from star order by dnum desc limit 10
+	</select>
+	
+	<resultMap id="ItemRm" type="Item" >
+		<id column="id" property="id" />
+		<result column="category" property="category" />
+		<result column="name" property="title" /> 
+		<result column="season" property="season" /> 
+		<result column="brand" property="brand" /> 
+		<result column="url" property="url" /> 
+		<result column="imgUrl" property="imgUrl" /> 
+		<result column="ctime" property="ctime" />  
+		<result column="dnum" property="dnum" /> 
+	</resultMap>
+
+</mapper>

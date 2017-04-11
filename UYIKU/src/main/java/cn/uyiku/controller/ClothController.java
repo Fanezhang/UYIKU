@@ -3,31 +3,25 @@ package cn.uyiku.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
 
 import javax.annotation.Resource;
 
-import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.io.FileUtils;
-import org.apache.shiro.session.Session;
-import org.apache.shiro.web.session.HttpServletSession;
-import org.aspectj.util.FileUtil;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import cn.uyiku.pojo.Cloth;
 import cn.uyiku.service.ClothService;
 import cn.uyiku.tool.SeasonTool;
-import oracle.net.aso.s;
 
 @Controller
+@MapperScan("cn.uyiku.mapper")
 public class ClothController {
 	@Resource
 	private ClothService clothService;

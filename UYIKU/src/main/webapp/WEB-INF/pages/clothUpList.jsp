@@ -611,7 +611,7 @@ imf.create("imageFlow", 0.15, 1.5, 10);
 			<div class="bank">
 			<!-- 上衣遍历展示 -->
 				<c:forEach items="${clothList}" var="cloth">
-					<a rel="http://${cloth.url}" title="${cloth.name}" href="clothInfo.action?clothId=${cloth.id}"></a>
+					<a rel="http://image.uyiku.com/${cloth.id}.jpg" title="${cloth.name}" href="clothInfo.action?clothId=${cloth.id}"></a>
 				</c:forEach>
 			</div>
 			<div class="text">

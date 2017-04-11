@@ -2,57 +2,83 @@ package cn.uyiku.service;
 
 import java.util.List;
 
-import cn.uyiku.pojo.Cloth;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import cn.uyiku.mapper.PlanMapper;
+import cn.uyiku.mapper.Plan_ClothMapper;
 import cn.uyiku.pojo.Plan;
 
-public interface PlanService {
+@Service
+public class PlanService {
+	
+	
+	//用UUID生成
+	String userId="1";
+
+	@Autowired
+	private PlanMapper planMapper;
+	@Autowired
+	private Plan_ClothMapper plan_ClothMapper;
+	
+	
+	public List<Plan> findAllPlanBySeason(String season) {
+		return planMapper.findAllPlanBySeason(season);
+	}
+
+
+	public List<Plan> findOnePlanById( String style, String season,String userId,String id) {
+		
+		return planMapper.findOnePlanById(style, season, userId, id);
+	}
+
+	@Transactional(value="tm")
+	public void save(Plan plan, String[] ids,String userId) {
+		System.out.println("走到service层");
+		//保存Plan对象到数据库Plan表
+		planMapper.savePlan(plan);
+		//保存方案及单品关系
+		for (String id : ids) {
+			plan_ClothMapper.save(plan.getId(), id);
+		}
+	}
+	
+/*	@Override
+	public void update(Plan plan, List<String> cIds) {
+		//更新Plan表中的对象
+		planMapper.update(plan);
+		//删除关联表中原有的Plan对象
+		plan_ClothMapper.delete(plan.getId());
+		//保存方案及单品关系
+		plan_ClothMapper.save(plan.getId(), id);
+	}*/
+	
+
+	public List<Plan> findLike(String word,String userId) {
+		return planMapper.findLike(word,userId);
+	}
+
+
+	public void delete(String id) {
+		plan_ClothMapper.delete(id);
+		planMapper.delete(id);
+		
+	}
+
+	@Transactional(value="tm")
+	public List<Plan> findPlanByTag(String style, String season, String userId) {
+		return planMapper.findPlanByTag(style,season,userId);
+	
+	}
+
+	@Transactional(value="tm")
+	public void update(Plan plan, List<String> cIds) {
+		
+		
+	}
 
 
 
-	/**按季节查询方案----------------------------暂时没用到,用了findOnePlanById方法
-	 * @param season:
-	 * @return 所有符合季节的搭配方案
-	 */
-	public List<Plan> findAllPlanBySeason(String season);
 	
-	/**
-	 * 根据planId返回具体的一个Plan对象
-	 * 需要ClothService.findCloseListById方法支持
-	 * @param planId
-	 * @return 一个搭配方案对象
-	 */
-	public List<Plan> findOnePlanById( String style, String season,String userId,String id) ;
-	
-	/**
-	 * 保存一种搭配类型
-	 * @param plan 保存传入的Plan对象
-	 */
-	public void save(Plan plan, String[] ids,String userId);
-	
-	/**
-	 * 更新一个搭配类型
-	 * @param plan 需要更新的Plan对象
-	 */
-	public void update(Plan plan,List<String> cIds);
-	
-	/**
-	 * 对Plan名字的关键字 进行模糊查询
-	 * @param word 
-	 * @return 返回模糊查询的结果
-	 */
-	public List<Plan> findLike(String word,String userId);
-	
-	/**
-	 * 删除指定的Plan id
-	 * @param plan 删除的Plan
-	 */
-	public void delete(String id);
-	
-	/**
-	 * 查找指定条件的套装
-	 * @param style  传入的风格
-	 * @param season  传入的季节
-	 * @return
-	 */
-	public List<Plan> findPlanByTag(String style, String season,String userId);
 }
