@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ItemMapper">
+	<insert id="save">
+		insert into star values(
+			#{id},
+			#{category},
+			#{name},
+			#{serson},
+			#{brand},
+			#{url},
+			#{imgurl},
+			#{ctime},
+			#{dnum}
+		)
+	</insert>
+
+
+</mapper>

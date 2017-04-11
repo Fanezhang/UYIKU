@@ -1,4 +1,4 @@
-package controller;
+package cn.controller;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import javax.annotation.Resource;
+
 import org.jsoup.Connection;
 import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
@@ -18,22 +20,24 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import pojo.Item;
-import util.ItemUtil;
+import cn.pojo.Item;
+import cn.service.ItemServiceImpl;
+import cn.util.ItemUtil;
 
 
-@SpringBootApplication
+
 @RestController
 public class StartController {
-	public static void main(String[] args){
-		SpringApplication.run(StartController.class, args);
-	}
+	@Resource
+	private ItemServiceImpl itemService;
+	
 	@RequestMapping("in")
 	public ModelAndView index(){
 		return new ModelAndView("index");
@@ -155,6 +159,7 @@ public class StartController {
 							bw.flush();
 							//封装成对象
 							Item item = ItemUtil.StringToItem(itemNum, itemUrl, title,Integer.parseInt(saleNum), seasonAndTime, brand, category, imgUrl);
+							itemService.save(item);
 							
 							prop.setProperty("itemNum",++itemNum+"");
 							prop.store(new FileOutputStream(new File("src/main/resources/jsoup.properties")),null);

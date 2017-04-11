@@ -1,8 +1,8 @@
-package util;
+package cn.util;
 
 import java.util.Date;
 
-import pojo.Item;
+import cn.pojo.Item;
 
 public class ItemUtil {
 	/**
@@ -17,9 +17,9 @@ public class ItemUtil {
 	 * @param imgUrl		图片链接
 	 * @return
 	 */
-	public static Item StringToItem(int ItemNum,String itemUrl,String title,int saleNum,String seasonAndTime,String brand,String category,String imgUrl){
+	public static Item StringToItem(int itemNum,String itemUrl,String title,int saleNum,String seasonAndTime,String brand,String category,String imgUrl){
 		Item item=new Item();
-		item.setId(ItemNum);
+		item.setId(itemNum);
 		item.setUrl(itemUrl);
 		item.setTitle(title);
 		item.setDnum(saleNum);

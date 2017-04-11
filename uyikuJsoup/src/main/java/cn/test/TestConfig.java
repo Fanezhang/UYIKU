@@ -1,4 +1,4 @@
-package test;
+package cn.test;
 
 import javax.annotation.Resource;
 
