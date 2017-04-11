@@ -1,4 +1,4 @@
-package cn.pojo;
+package cn.uyiku.pojo;
 
 import java.util.Date;
 

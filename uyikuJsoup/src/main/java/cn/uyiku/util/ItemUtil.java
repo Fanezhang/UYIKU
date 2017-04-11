@@ -1,8 +1,8 @@
-package cn.util;
+package cn.uyiku.util;
 
 import java.util.Date;
 
-import cn.pojo.Item;
+import cn.uyiku.pojo.Item;
 
 public class ItemUtil {
 	/**
@@ -25,8 +25,8 @@ public class ItemUtil {
 		item.setDnum(saleNum);
 		item.setCtime(new Date());
 		item.setImgUrl(imgUrl);
-		String season=seasonAndTime.substring(0,4);
-		item.setSeason(season);
+//		String season=seasonAndTime.substring(4,6);
+		item.setSeason(seasonAndTime);
 		item.setBrand(brand);
 		item.setCategory(category);
 		return item;

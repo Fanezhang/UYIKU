@@ -2,16 +2,16 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.ItemMapper">
-	<insert id="save">
+<mapper namespace="cn.uyiku.mapper.ItemMapper">
+	<insert id="save" >
 		insert into star values(
 			#{id},
 			#{category},
-			#{name},
-			#{serson},
+			#{title},
+			#{season},
 			#{brand},
 			#{url},
-			#{imgurl},
+			#{imgUrl},
 			#{ctime},
 			#{dnum}
 		)

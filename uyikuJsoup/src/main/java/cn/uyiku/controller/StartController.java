@@ -1,4 +1,4 @@
-package cn.controller;
+package cn.uyiku.controller;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -18,25 +18,22 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import cn.pojo.Item;
-import cn.service.ItemServiceImpl;
-import cn.util.ItemUtil;
-
-
+import cn.uyiku.pojo.Item;
+import cn.uyiku.service.ItemService;
+import cn.uyiku.util.ItemUtil;
 
 @RestController
+//@MapperScan("cn.uyiku.mapper")
 public class StartController {
 	@Resource
-	private ItemServiceImpl itemService;
+	private ItemService itemService;
 	
 	@RequestMapping("in")
 	public ModelAndView index(){
@@ -50,6 +47,7 @@ public class StartController {
 			e.printStackTrace();
 		}
 	}
+	
 	public void jsoupMain() throws IOException{
 		
 		Properties prop=new Properties();
@@ -158,7 +156,13 @@ public class StartController {
 							dataMap.put(title,itemUrl);//把标题存入map
 							bw.flush();
 							//封装成对象
-							Item item = ItemUtil.StringToItem(itemNum, itemUrl, title,Integer.parseInt(saleNum), seasonAndTime, brand, category, imgUrl);
+							int saleN = Integer.parseInt(saleNum.equals("-")?"0":saleNum);
+							Item item =null;
+							try{
+								item = ItemUtil.StringToItem(itemNum, itemUrl, title,saleN, seasonAndTime, brand, category, imgUrl);
+							}catch (Exception e) {
+								e.printStackTrace();
+							}
 							itemService.save(item);
 							
 							prop.setProperty("itemNum",++itemNum+"");

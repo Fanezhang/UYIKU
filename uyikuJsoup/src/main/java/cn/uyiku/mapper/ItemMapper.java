@@ -1,8 +1,8 @@
-package cn.mapper;
+package cn.uyiku.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import cn.pojo.Item;
+import cn.uyiku.pojo.Item;
 
 @Mapper
 public interface ItemMapper {
