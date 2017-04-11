@@ -73,6 +73,7 @@ public class jsoupTest {
 			bw.close();
 			
 	}
+	//按女装分类爬数据
 	@Test
 	public void test3(){
 		int count=1;

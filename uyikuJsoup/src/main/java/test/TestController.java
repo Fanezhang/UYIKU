@@ -29,9 +29,9 @@ public class TestController {
 	public ModelAndView index(){
 		return new ModelAndView("index");
 	}
-	public static void main(String[] args){
-		SpringApplication.run(TestController.class, args);
-	}
+//	public static void main(String[] args){
+//		SpringApplication.run(TestController.class, args);
+//	}
 	@RequestMapping("hh")
 	public String hh(){
 		return "hh";
