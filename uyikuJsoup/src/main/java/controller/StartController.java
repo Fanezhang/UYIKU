@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.jsoup.Connection;
 import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
@@ -20,12 +18,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import pojo.Item;
 
 
 @SpringBootApplication
@@ -39,15 +38,15 @@ public class StartController {
 		return new ModelAndView("index");
 	}
 	@RequestMapping("go")
-	public void start(HttpServletResponse resp){
+	public void start(){
 		try {
-			resp.flushBuffer();
 			jsoupMain();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	public void jsoupMain() throws IOException{
+		
 		Properties prop=new Properties();
 		//断点续爬
 		prop.load(this.getClass().getClassLoader().getResourceAsStream("jsoup.properties"));
@@ -145,6 +144,7 @@ public class StartController {
 							
 							prop.setProperty("itemNum",++itemNum+"");
 							prop.store(new FileOutputStream(new File("src/main/resources/jsoup.properties")),null);
+							
 						}
 	//					System.out.println(string);
 					}
