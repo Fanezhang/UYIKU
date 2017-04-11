@@ -25,6 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import pojo.Item;
+import util.ItemUtil;
 
 
 @SpringBootApplication
@@ -116,6 +117,9 @@ public class StartController {
 							}
 						}
 						if(dataMap.get(title)==null&&flag==true){//去除重复项
+							String seasonAndTime="-";//季节和时间
+							String brand="-";//品牌
+							String category="-";//类别
 							//详情页链接
 							System.out.println(itemUrl);
 							bw.write(itemUrl+"\r\n");
@@ -131,6 +135,14 @@ public class StartController {
 							bw.write("\t商品属性:\r\n");
 							for (Element element : elesSx) {
 								String attr = element.text();
+								//分离出需要的属性
+								if(attr.contains("年份季节")){
+									seasonAndTime = attr.split(":")[1].trim();
+								}else if(attr.contains("品牌")){
+									brand=attr.split(":")[1].trim();
+								}else if(attr.contains("基础风格")){
+									category=attr.split(":")[1].trim();
+								}
 								System.out.println("\t\t"+attr);
 								bw.write("\t\t"+attr+"\r\n");
 							}
@@ -141,6 +153,8 @@ public class StartController {
 							
 							dataMap.put(title,itemUrl);//把标题存入map
 							bw.flush();
+							//封装成对象
+							Item item = ItemUtil.StringToItem(itemNum, itemUrl, title,Integer.parseInt(saleNum), seasonAndTime, brand, category, imgUrl);
 							
 							prop.setProperty("itemNum",++itemNum+"");
 							prop.store(new FileOutputStream(new File("src/main/resources/jsoup.properties")),null);
