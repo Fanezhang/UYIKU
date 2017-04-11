@@ -1,0 +1,30 @@
+2017/03/13 16:02:14 [emerg] 7796#4720: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:02:46 [emerg] 2372#2376: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:02:47 [emerg] 2480#2484: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:02:48 [emerg] 2584#2588: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:02:48 [emerg] 6700#7320: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:02:49 [emerg] 6160#7220: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:02:50 [emerg] 6688#8012: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:02:51 [emerg] 3632#7780: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:02:51 [emerg] 7540#4704: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:02:52 [emerg] 2360#5200: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:03:03 [emerg] 2480#2528: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/03/13 16:03:34 [emerg] 7084#7888: CreateFile() "C:\拿来共享的\京淘\01-课前资料等多个文件\projectEnv1\env\nginx-1.9.9/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2017/04/07 11:05:40 [emerg] 9736#9740: unknown directive "Listen" in C:\nginx-1.9.9/conf/nginx.conf:83
+2017/04/07 11:16:02 [emerg] 5952#8884: unknown directive "Listen" in C:\nginx-1.9.9/conf/nginx.conf:83
+2017/04/07 11:18:18 [emerg] 4720#9832: unknown directive "Listen" in C:\nginx-1.9.9/conf/nginx.conf:83
+2017/04/07 11:23:07 [emerg] 5260#9444: unknown directive "Listen" in C:\nginx-1.9.9/conf/nginx.conf:83
+2017/04/07 11:24:21 [emerg] 8284#11076: unknown directive "Server_name" in C:\nginx-1.9.9/conf/nginx.conf:84
+2017/04/07 11:24:57 [emerg] 10300#8248: unexpected "}" in C:\nginx-1.9.9/conf/nginx.conf:88
+2017/04/07 11:26:39 [emerg] 10324#11228: "server" directive is not allowed here in C:\nginx-1.9.9/conf/nginx.conf:82
+2017/04/07 11:28:58 [emerg] 11996#12000: unexpected "}" in C:\nginx-1.9.9/conf/nginx.conf:88
+2017/04/07 11:29:33 [emerg] 11028#8324: unexpected "}" in C:\nginx-1.9.9/conf/nginx.conf:89
+2017/04/07 11:29:38 [emerg] 11444#11452: unexpected "}" in C:\nginx-1.9.9/conf/nginx.conf:89
+2017/04/07 11:41:44 [error] 1012#11628: *1 CreateFile() "C:\nginx-1.9.9/html/default.jpg" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /default.jpg HTTP/1.1", host: "image.uyiku.com"
+2017/04/07 11:41:44 [error] 1012#11628: *1 CreateFile() "C:\nginx-1.9.9/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "image.uyiku.com", referrer: "http://image.uyiku.com/default.jpg"
+2017/04/07 11:42:08 [error] 1012#11628: *1 CreateFile() "C:\nginx-1.9.9/html/images/default.jpg" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /images/default.jpg HTTP/1.1", host: "image.uyiku.com"
+2017/04/07 11:52:11 [error] 1012#11628: *6 CreateFile() "c:\images/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: image.uyiku.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:89", referrer: "http://127.0.0.1:89/default.jpg"
+2017/04/07 11:53:22 [error] 1012#11628: *8 CreateFile() "C:\nginx-1.9.9/html/default.jpg" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /default.jpg HTTP/1.1", host: "image.uyiku.com"
+2017/04/07 11:53:49 [error] 1012#11628: *8 CreateFile() "C:\nginx-1.9.9/html/default.jpg" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /default.jpg HTTP/1.1", host: "image.uyiku.com"
+2017/04/07 11:53:52 [error] 1012#11628: *11 CreateFile() "c:\images/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: image.uyiku.com, request: "GET /favicon.ico HTTP/1.1", host: "image.uyiku.com:89", referrer: "http://image.uyiku.com:89/default.jpg"
+2017/04/07 11:54:09 [error] 1012#11628: *8 CreateFile() "C:\nginx-1.9.9/html/default.jpg" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /default.jpg HTTP/1.1", host: "image.uyiku.com"
