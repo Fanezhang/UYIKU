@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
-Implementation-Vendor: Pivotal Software, Inc.
 Implementation-Title: UYIKU Maven Webapp
 Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: D
 Implementation-Vendor-Id: cn.tedu
-Build-Jdk: 1.7.0_71
-Built-By: fane
+Build-Jdk: 1.8.0_101
 Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
 

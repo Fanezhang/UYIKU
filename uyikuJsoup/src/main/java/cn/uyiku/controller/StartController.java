@@ -61,8 +61,9 @@ public class StartController {
 		File file=new File("D:\\java\\WorkspaceMars\\uyikuSpace\\uyiku\\jsoupTestItemByIdAndCatId.txt");
 		Writer writer=new FileWriter(file,true);
 		BufferedWriter bw=new BufferedWriter(writer);
-		//设置map进行校验
-		Map<String,String> dataMap=new HashMap<String,String>();
+		//设置map进行校验,程序停止就自动去数据库取数据
+		Map<String,String> dataMap=itemService.findAllTitles();
+		System.out.println("****************完成数据加载****************");
 		for(int i=pid;i<100000000;i++){
 			for(int j=catId;j<9999;j++){
 				System.out.println("=========================\npid:"+i+"\tcatId:"+j+"\t商品数量："+(itemNum+1)+"\n=========================");
@@ -96,7 +97,7 @@ public class StartController {
 						String itemUrl = map.get("EURL");
 						//第二层 商品详情页
 						Document doc = Jsoup.connect(itemUrl).get();
-						Thread.sleep(2000);
+//						Thread.sleep(2000);
 						//--------淘宝--------
 						Element ele = doc.select("#J_Title h3").first();//标题
 						Element eleXl=doc.select("#J_SellCounter").first();//销量

@@ -16,6 +16,8 @@
 			#{dnum}
 		)
 	</insert>
-
+	<select id="findAllTitles" resultType="String">
+		select name from star
+	</select>
 
 </mapper>
