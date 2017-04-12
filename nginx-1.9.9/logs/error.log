@@ -28,3 +28,11 @@
 2017/04/07 11:53:49 [error] 1012#11628: *8 CreateFile() "C:\nginx-1.9.9/html/default.jpg" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /default.jpg HTTP/1.1", host: "image.uyiku.com"
 2017/04/07 11:53:52 [error] 1012#11628: *11 CreateFile() "c:\images/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: image.uyiku.com, request: "GET /favicon.ico HTTP/1.1", host: "image.uyiku.com:89", referrer: "http://image.uyiku.com:89/default.jpg"
 2017/04/07 11:54:09 [error] 1012#11628: *8 CreateFile() "C:\nginx-1.9.9/html/default.jpg" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /default.jpg HTTP/1.1", host: "image.uyiku.com"
+2017/04/12 09:11:13 [emerg] 9404#11356: CreateDirectory() "D:\java\WorkspaceMars\uyikuSpace\uyiku\uyiku\nginx-1.9.9/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2017/04/12 09:13:36 [emerg] 2644#10568: CreateDirectory() "D:\java\WorkspaceMars\uyikuSpace\uyiku\uyiku\nginx-1.9.9/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2017/04/12 09:14:12 [emerg] 13408#15172: CreateDirectory() "D:\java\WorkspaceMars\uyikuSpace\uyiku\uyiku\nginx-1.9.9/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2017/04/12 09:15:07 [emerg] 14416#15280: CreateDirectory() "D:\java\WorkspaceMars\uyikuSpace\uyiku\uyiku\nginx-1.9.9/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2017/04/12 09:15:48 [emerg] 14996#14568: CreateDirectory() "D:\java\WorkspaceMars\uyikuSpace\uyiku\uyiku\nginx-1.9.9/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2017/04/12 09:16:37 [emerg] 10260#15264: CreateDirectory() "D:\java\WorkspaceMars\uyikuSpace\uyiku\uyiku\nginx-1.9.9/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2017/04/12 09:17:25 [emerg] 10232#14680: CreateDirectory() "D:\java\WorkspaceMars\uyikuSpace\uyiku\uyiku\nginx-1.9.9/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2017/04/12 09:23:38 [emerg] 14936#16196: CreateDirectory() "D:\java\WorkspaceMars\uyikuSpace\uyiku\uyiku\nginx-1.9.9/temp/client_body_temp" failed (3: The system cannot find the path specified)

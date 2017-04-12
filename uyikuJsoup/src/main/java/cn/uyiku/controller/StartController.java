@@ -19,6 +19,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -160,6 +161,7 @@ public class StartController {
 							int saleN = Integer.parseInt(saleNum.equals("-")?"0":saleNum);
 							Item item =null;
 							try{
+								
 								item = ItemUtil.StringToItem(itemNum, itemUrl, title,saleN, seasonAndTime, brand, category, imgUrl);
 							}catch (Exception e) {
 								e.printStackTrace();
@@ -167,15 +169,25 @@ public class StartController {
 							itemService.save(item);
 							
 							prop.setProperty("itemNum",++itemNum+"");
-							prop.store(new FileOutputStream(new File("src/main/resources/jsoup.properties")),null);
-							
+							FileOutputStream fos=null;
+							try{
+								fos=new FileOutputStream(new File("src/main/resources/jsoup.properties"));
+								prop.store(fos,null);
+								fos.close();
+							}catch(Exception e){
+								fos.close();
+							}
 						}
 	//					System.out.println(string);
 					}
 	
 	//				System.out.println(substring);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
+				}catch(DuplicateKeyException de){//数据库插入数据，主键重复错误
+					prop.setProperty("itemNum",++itemNum+"");
+					FileOutputStream fos=new FileOutputStream(new File("src/main/resources/jsoup.properties"));
+					prop.store(fos,null);
+					fos.close();
+				}catch (Exception e) {
 					e.printStackTrace();
 				}
 	//			System.out.println("========================================================================================================");
